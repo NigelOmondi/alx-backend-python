@@ -1,29 +1,18 @@
 #!/usr/bin/env python3
-"""Type checking"""
-
+"""Use mypy to validate the piece of code and apply any changes."""
 from typing import Tuple, List
 
 
-def zoom_array(lst: Tuple, factor: int = 2) -> Tuple:
-    """
-    Zoom in on the elements of a tuple by repeating each element.
-
-    Args:
-        lst (Tuple): The input tuple.
-        factor (int, optional): The factor by which each element
-        should be repeated. Defaults to 2.
-
-    Returns:
-        Tuple: The resulting tuple after zooming in.
-    """
+def zoom_array(lst: Tuple, factor: int = 2) -> List:
+    """Returns a list of integers multiplied by certain factor."""
     zoomed_in: List = [
         item for item in lst
         for i in range(factor)
     ]
-    return tuple(zoomed_in)
+    return zoomed_in
 
 
-array = (12, 72, 91)
+array: Tuple = (12, 72, 91)
 
 zoom_2x = zoom_array(array)
 
