@@ -1,24 +1,14 @@
 #!/usr/bin/env python3
-"""
-Async Generator
-"""
-import asyncio
+"""async_generator that takes no arguments."""
 import random
+import asyncio
+from typing import Generator
 
 
-async def async_generator():
+async def async_generator() -> Generator[float, None, None]:
     """
-    Asynchronous generator that yields ten
-    random numbers between 0 and 10.
-
-    This generator asynchronously yields a random
-    float between 0 and 10 every second.
-    It does this for ten iterations, making use of
-    asyncio's sleep function to
-    demonstrate asynchronous behavior.
-
-    Yields:
-        float: A random float between 0 and 10.
+    async_generator - function to loop 10 times
+     random number between 0 and 10. Use the random module
     """
     for _ in range(10):
         await asyncio.sleep(1)
